@@ -92,8 +92,15 @@ public class SimpleCalculatorImpl implements SimpleCalculator {
     //  if input was "12+" and called `deleteLast()`, then delete the "+"
     //  if no input was given, then there is nothing to do here
 
-    if (this.output.compareTo("0") != 0)
+    if (this.output.compareTo("0") == 0 || this.output.length() == 0)
+    {
+      this.output = "0";
+    }
+    else
+    {
       this.output = this.output.substring(0, this.output.length() - 1);
+    }
+
   }
 
   @Override
